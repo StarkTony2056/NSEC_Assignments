@@ -5,15 +5,15 @@ This repo has been exclusively created to keep a track of the assignments given 
 Files will be named in the following format: *'course name_assignment no.'*
 
 ## DSA Assignment List:
-Q1. A) Write a program to implement Matrix multiplication.
+Q1. ~~A) Write a program to implement Matrix multiplication.~~
 
     B) Write a program to implement Tower Of Hanoi problem.
     
-Q2. Write a program of implementation of the following functions in an array:
+~~Q2. Write a program of implementation of the following functions in an array:~~
 
-    a) Insert an element into a specific position.
+    ~~a) Insert an element into a specific position.~~
     
-    b) Delete an element from a specific position.
+    ~~b) Delete an element from a specific position.~~
     
 Q3. Write a program to implement the following operations on a STACK using Array:
 
