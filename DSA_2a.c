@@ -22,4 +22,5 @@ int main() {
   //printing final array
   for(i=0; i<=n; i++)
     printf("%d\t", a[i]);
+  return 0;
 }
