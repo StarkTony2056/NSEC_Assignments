@@ -48,7 +48,7 @@ void pop() {
 
 void display() {
   int k;
-  printf("stack contents are: ");
+  printf("stack contents are:\t");
   for(k=0; k<=top; k++) {
     printf("%d\t", a[k]);
   }
