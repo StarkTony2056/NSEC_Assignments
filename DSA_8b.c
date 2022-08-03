@@ -1,7 +1,7 @@
-//insertion sort
+//bubble sort
 #include<stdio.h>
 
-void insertion_sort(int[], int);
+void bubble_sort(int[], int);
 int main() {
     int n, i;
     printf("enter number of array elements: ");
@@ -16,26 +16,23 @@ int main() {
         printf("%d\t", a[i]);
     }
     printf("\n");
-    insertion_sort(a, n);
+    bubble_sort(a,n);
     return 0;
 }
 
-void insertion_sort(int a[], int n) {
-    int i,j,temp;
-    for(i=1; i<n; i++) {
-        temp=a[i];
-        for(j=i-1; j>=0; j--) {
-            if(a[j]>temp)
-                a[j+1] = a[j];
-            else
-                break;
+void bubble_sort(int a[], int n) {
+    int i, j, temp;
+    for(i=0; i<(n-1); i++) { //step
+        for(j=0; j<(n-1-i); j++) { //comparison
+            if(a[j]>a[j+1]) {
+                temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+            }
         }
-        a[j+1] = temp;
     }
-    printf("the sorted array is:\n");
+    printf("the sorted array:\n");
     for(i=0; i<n; i++) {
         printf("%d\t", a[i]);
     }
-    printf("\n");
-    return;
 }
