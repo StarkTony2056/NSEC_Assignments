@@ -9,7 +9,7 @@ int main() {
   scanf("%d", &r);
   printf("Enter number of columns: ");
   scanf("%d", &c);
-  int a[r][c];
+  int a[10][10];
   printf("Enter elements of array row-wise:\n");
   for(i=0; i<r; i++) 
     for(j=0; j<c; j++) {
@@ -26,7 +26,7 @@ int main() {
     printf("\n");
   }
   //initializing the final array
-  int b[count+1][3];
+  int b[10][10];
   //operating on content of b[][]
   r_tmp=1;
   for(i=0; i<r; i++)
