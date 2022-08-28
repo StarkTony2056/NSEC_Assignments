@@ -33,7 +33,7 @@ Q6. WAP to convert the following expression to its postfix equivalent using stac
     
     b. A + (B * C – (D / E ^ F) * G) * H Where ^: raise to the power
     
-~~Q7. Write program to evaluate an user given Postfix expression.
+~~Q7. Write program to evaluate an user given Postfix expression.~~
 
 ~~Q8. a. Write a program to sort an array using Insertion sort~~
 
