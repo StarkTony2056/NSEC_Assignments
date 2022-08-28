@@ -39,7 +39,7 @@ Q7. Write program to evaluate an user given Postfix expression.
 
     b. Write a program to sort an array using Bubble sort.
     
-Q9. a. Write a program to sort an array using Selection sort
+~~Q9. a. Write a program to sort an array using Selection sort~~
 
     b. Write a program to sort an array using Insertion sort.
     
