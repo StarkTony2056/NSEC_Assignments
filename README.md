@@ -19,11 +19,11 @@ Files will be named in the following format: *'course name_assignment no.'*
 
     a) PUSH b) POP c) DISPLAY
     
-Q4. Write a program to implement the following operations on a LINEAR QUEUE using Array:
+~~Q4. Write a program to implement the following operations on a LINEAR QUEUE using Array:~~
 
     a) INSERT b) DELETE c) DISPLAY
     
-Q5. Write a program to implement the following operations on a CIRCULAR QUEUE using Array:
+~~Q5. Write a program to implement the following operations on a CIRCULAR QUEUE using Array:~~
 
     a. INSERT b) DELETE c) DISPLAY
     
@@ -41,7 +41,7 @@ Q6. WAP to convert the following expression to its postfix equivalent using stac
     
 ~~Q9. a. Write a program to sort an array using Selection sort~~
 
-    b. Write a program to sort an array using Insertion sort.
+    b. Write a program to sort an array using Merge sort.
     
 Q10. Write a program to search an element using Interpolation Search algorithm.
 
