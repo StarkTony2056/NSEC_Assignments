@@ -5,16 +5,15 @@ struct node {
 	int info;
 	struct node *prev, *next;
 };
-struct node* start = NULL;
+struct node* head = NULL, *temp;
 
-void traverse()
+void display()
 {
-	if (start == NULL) {
+	if (head == NULL) {
 		printf("\nList is empty\n");
 		return;
 	}
-	struct node* temp;
-	temp = start;
+	temp = head;
 	while (temp != NULL) {
 		printf("Data = %d\n", temp->info);
 		temp = temp->next;
@@ -24,21 +23,20 @@ void traverse()
 void insertAtFront()
 {
 	int data;
-	struct node* temp;
 	temp = (struct node*)malloc(sizeof(struct node));
 	printf("\nEnter number to be inserted: ");
 	scanf("%d", &data);
 	temp->info = data;
 	temp->prev = NULL;
 
-	temp->next = start;
-	start = temp;
+	temp->next = head;
+	head = temp;
 }
 
 void insertAtEnd()
 {
 	int data;
-	struct node *temp, *trav;
+	struct node *trav;
 	temp = (struct node*)malloc(sizeof(struct node));
 	temp->prev = NULL;
 	temp->next = NULL;
@@ -46,10 +44,10 @@ void insertAtEnd()
 	scanf("%d", &data);
 	temp->info = data;
 	temp->next = NULL;
-	trav = start;
-	if (start == NULL) {
+	trav = head;
+	if (head == NULL) {
 
-		start = temp;
+		head = temp;
 	}
 	else {
 		while (trav->next != NULL)
@@ -62,16 +60,16 @@ void insertAtEnd()
 void insertAtPosition()
 {
 	int data, pos, i = 1;
-	struct node *temp, *newnode;
-	newnode = malloc(sizeof(struct node));
-	newnode->next = NULL;
-	newnode->prev = NULL;
+	struct node *r;
+	r = (struct node*)malloc(sizeof(struct node));
+	r->next = NULL;
+	r->prev = NULL;
 	printf("\nEnter position : ");
 	scanf("%d", &pos);
-	if (start == NULL) {
-		start = newnode;
-		newnode->prev = NULL;
-		newnode->next = NULL;
+	if (head == NULL) {
+		head = r;
+		r->prev = NULL;
+		r->next = NULL;
 	}
 	else if (pos == 1) {
 	insertAtFront();
@@ -79,43 +77,41 @@ void insertAtPosition()
 	else {
 	printf("\nEnter number to be inserted: ");
 	scanf("%d", &data);
-	newnode->info = data;
-	temp = start;
+	r->info = data;
+	temp = head;
 		while (i < pos - 1) {
 			temp = temp->next;
 			i++;
 		}
-		newnode->next = temp->next;
-		newnode->prev = temp;
-		temp->next = newnode;
-		temp->next->prev = newnode;
+		r->next = temp->next;
+		r->prev = temp;
+		temp->next = r;
+		temp->next->prev = r;
 	}
 }
 
 void deleteFirst()
 {
-	struct node* temp;
-	if (start == NULL)
+	if (head == NULL)
 		printf("\nList is empty\n");
 	else {
-		temp = start;
-		start = start->next;
-		if (start != NULL)
-			start->prev = NULL;
+		temp = head;
+		head = head->next;
+		if (head != NULL)
+			head->prev = NULL;
 		free(temp);
 	}
 }
 
 void deleteEnd()
 {
-	struct node* temp;
-	if (start == NULL)
+	if (head == NULL)
 		printf("\nList is empty\n");
-	temp = start;
+	temp = head;
 	while (temp->next != NULL)
 		temp = temp->next;
-	if (start->next == NULL)
-		start = NULL;
+	if (head->next == NULL)
+		head = NULL;
 	else {
 		temp->prev->next = NULL;
 		free(temp);
@@ -125,9 +121,9 @@ void deleteEnd()
 void deletePosition()
 {
 	int pos, i = 1;
-	struct node *temp, *position;
-	temp = start;
-	if (start == NULL)
+	struct node *position;
+	temp = head;
+	if (head == NULL)
 		printf("\nList is empty\n");
 	else {
 		printf("\nEnter position : ");
@@ -135,8 +131,8 @@ void deletePosition()
 
 		if (pos == 1) {
 			deleteFirst();
-			if (start != NULL) {
-				start->prev = NULL;
+			if (head != NULL) {
+				head->prev = NULL;
 			}
 			free(position);
 			return;
@@ -158,26 +154,20 @@ int main()
 	int choice;
 	while (1) {
 
-		printf("\n\t1 To see list\n");
-		printf("\t2 For insertion at"
-			" starting\n");
-		printf("\t3 For insertion at"
-			" end\n");
-		printf("\t4 For insertion at "
-			"any position\n");
-		printf("\t5 For deletion of "
-			"first element\n");
-		printf("\t6 For deletion of "
-			"last element\n");
-		printf("\t7 For deletion of "
-			"element at any position\n");
-		printf("\t8 To exit\n");
-		printf("\nEnter Choice :\n");
+		printf("\n1 To display list\n");
+		printf("2 For insertion at starting\n");
+		printf("3 For insertion at end\n");
+		printf("4 For insertion at any position\n");
+		printf("5 For deletion of first element\n");
+		printf("6 For deletion of last element\n");
+		printf("7 For deletion of element at any position\n");
+		printf("8 To exit\n");
+		printf("Enter Choice :\n");
 		scanf("%d", &choice);
 
 		switch (choice) {
 		case 1:
-			traverse();
+			display();
 			break;
 		case 2:
 			insertAtFront();
